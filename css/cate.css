@@ -1,5 +1,4 @@
 main {
-  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -106,6 +105,7 @@ main .main .card-wrap {
   margin: 26px 32px;
 }
 main .main .card-wrap .card {
+  position: relative;
   box-sizing: border-box;
   width: 288px;
   margin-right: 20px;
@@ -115,6 +115,7 @@ main .main .card-wrap .card {
   border: 5px solid #000000;
   border-radius: 20px;
   flex-shrink: 0;
+  overflow: hidden;
 }
 main .main .card-wrap .card .card-head {
   display: flex;
@@ -138,7 +139,6 @@ main .main .card-wrap .card .card-star {
   color: #333;
   font-size: 12px;
   padding: 8px 0;
-  cursor: pointer;
 }
 main .main .card-wrap .card .card-star .el-rate__icon {
   font-size: 16px;
@@ -149,6 +149,52 @@ main .main .card-wrap .card .card-desc {
   font-size: 14px;
   line-height: 18px;
   color: #000000;
+}
+main .main .card-wrap .card .card-edit {
+  position: absolute;
+  font-size: 18px;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+  cursor: pointer;
+}
+main .main .card-wrap .card .card-date {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 0 0 0 68%;
+  background: #0008;
+  background: linear-gradient(to bottom left, #3d3333 0, #3d3333cc 40%, #ae878890 100%);
+  opacity: 0;
+  transition: all 0.24s;
+  transform: scale(0);
+  transform-origin: top right;
+  display: flex;
+  flex-direction: column;
+}
+main .main .card-wrap .card .card-date > i {
+  color: #fff;
+  font-size: 20px;
+  margin: 12px 0 0 12px;
+  cursor: pointer;
+}
+main .main .card-wrap .card .card-date .card-date-star {
+  display: block;
+  margin: 88px auto 16px;
+}
+main .main .card-wrap .card .card-date .card-date-picker {
+  display: block;
+  margin: 16px auto;
+}
+main .main .card-wrap .card .card-date .card-date-btn {
+  display: block;
+  margin: 16px auto;
+}
+main .main .card-wrap .card .card-date.active {
+  transform: scale(1);
+  opacity: 1;
 }
 main .main .card-wrap .empty {
   display: flex;
@@ -183,7 +229,7 @@ main .main .card-wrap .empty div {
 .dialog > img:hover {
   transform: scale(1.2);
 }
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1400px) {
   main {
     justify-content: center;
   }
@@ -192,6 +238,75 @@ main .main .card-wrap .empty div {
     max-width: 1200px;
     box-sizing: border-box;
     margin: 20px 50px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  main .main .comment {
+    flex-direction: column;
+    justify-content: center;
+  }
+  main .main .comment > img {
+    width: 46%;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto 24px;
+  }
+  main .main .card-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 26px 32px;
+  }
+  main .main .card-wrap .card {
+    margin: 0 auto 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  main .main {
+    margin: 20px 36px;
+  }
+  main .main .comment {
+    flex-direction: column;
+    justify-content: center;
+    margin: 26px auto;
+    padding: 24px 12px;
+    background: #fff;
+    min-height: auto;
+  }
+  main .main .comment .comment-intro {
+    font-size: 48px;
+  }
+  main .main .comment .comment-intro > div > p > img {
+    width: 40px;
+    margin-left: 6px;
+  }
+  main .main .comment .comment-info {
+    margin-left: 24px;
+  }
+  main .main .comment .comment-info .comment-top {
+    display: flex;
+    margin-top: 0;
+  }
+  main .main .comment .comment-info .comment-top .comment-top-empty {
+    width: 100px;
+    height: 68px;
+  }
+  main .main .comment .comment-info .comment-top .comment-top-avatar {
+    width: 100px;
+  }
+  main .main .comment .comment-info .comment-top .comment-top-avatar > img {
+    width: 100px;
+  }
+  main .main .card-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    margin: 26px 32px;
+  }
+  main .main .card-wrap .card {
+    margin: 0 auto 24px;
   }
 }
 /*# sourceMappingURL=cate.css.map */
